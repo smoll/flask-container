@@ -1,7 +1,6 @@
 import unittest
 from app import app
 
-
 class MainTestCase(unittest.TestCase):
 
     def test_two_and_two(self):
@@ -10,7 +9,7 @@ class MainTestCase(unittest.TestCase):
         self.assertNotEqual(four, 5)
         self.assertNotEqual(four, 6)
         self.assertNotEqual(four, 22)
-
+        self.assertNotEqual(four, 60)
 
 if __name__ == '__main__':
     unittest.main()
