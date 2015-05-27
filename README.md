@@ -1,4 +1,4 @@
-# flask-container
+# flask-container [![Circle CI](https://circleci.com/gh/smoll/flask-container.svg?style=svg)](https://circleci.com/gh/smoll/flask-container)
 
 Following along with [this](https://realpython.com/blog/python/docker-in-action-fitter-happier-more-productive/) RealPython article...
 
