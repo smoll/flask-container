@@ -1,2 +1,2 @@
-Flask
-redis
+Flask==0.10.1
+redis==2.10.3

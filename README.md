@@ -10,20 +10,34 @@ Start flask app and redis db with
 $ docker-compose up
 ```
 
-View the site at [http://localhost:80/](http://localhost:80/) if running Docker natively (i.e. on a Linux host) or, if running remote docker on a VM (e.g. boot2docker) do `$ echo $DOCKER_HOST` or `$ boot2docker ip` to get host, it will probably be [http://192.168.59.103:80/](http://192.168.59.103:80/)
+View the site at [http://localhost:5000/](http://localhost:5000/) / [http://192.168.59.103:5000/](http://192.168.59.103:5000/)
 
 ## Tests
 
 Run tests on your dev env with
 
 ```
-$ docker-compose run web python tests.py
+$ docker-compose run tests
 ```
 
 ## Debugging
 
-In order for a `pdb` breakpoint to work, start the web container with
+In order for a `import pdb; pdb.set_trace()` breakpoint to work, start the web container with
 
 ```
 docker-compose run --service-ports web
 ```
+
+If you want to set a pdb breakpoint with nosetests (acceptance tests), you can either
+
+0. Start nosetests with [a flag so it does not capture stdout](http://stackoverflow.com/a/4950690/3456726), i.e.
+
+  ```
+  $ nosetests tests/acceptance -s # in run_tests.sh
+  ```
+
+0. Use the `set_trace` [variant that comes with Nose](http://stackoverflow.com/a/7493906/3456726), i.e.
+
+  ```
+  from nose.tools import set_trace; set_trace()
+  ```
