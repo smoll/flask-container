@@ -10,7 +10,16 @@ Start flask app and redis db with
 $ docker-compose up
 ```
 
-View the site at [http://localhost:5000/](http://localhost:5000/) / [http://192.168.59.103:5000/](http://192.168.59.103:5000/)
+View the site at [http://localhost:5000/](http://localhost:5000/) for docker native / [http://192.168.59.103:5000/](http://192.168.59.103:5000/) for boot2docker
+
+## Rebuilding containers
+
+This is only necessary if you make changes to the [Dockerfile](web/Dockerfile) or [dev Dockerfile](./Dockerfile) (or update [requirements.txt](web/requirements.txt)/[dev-requirements.txt](web/dev-requirements.txt))
+
+```
+$ docker-compose build web
+$ docker-compose build tests # test container
+```
 
 ## Tests
 
