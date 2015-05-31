@@ -22,7 +22,7 @@ class TestViewCount(unittest.TestCase):
             uri = urlparse(os.environ.get('DOCKER_HOST')) # e.g. tcp://192.168.59.103:2376
             host = uri.hostname # e.g. 192.168.59.103
         else:
-        	host = 'localhost'
+            host = 'localhost'
 
         self.driver.get('http://%s:5000' % host)
         self.assertRegex(self.driver.page_source, r'[0-9]+ times') # str looks like "...viewed 123 times."
