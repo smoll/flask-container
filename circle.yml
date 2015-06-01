@@ -5,9 +5,8 @@ machine:
 dependencies:
   override:
     - pip install -U docker-compose
+    - pip install -U tox
 
 test:
   override:
-    - docker-compose run -d --no-deps tests; sleep 10
-    - ls web/build
-    - mkdir -p $CIRCLE_TEST_REPORTS/pytest && cp web/build/junit.xml $CIRCLE_TEST_REPORTS/pytest/junit.xml
+    - tox
