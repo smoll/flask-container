@@ -23,8 +23,8 @@ ADD web /code
 # install requirements.txt
 RUN pip install -r /code/requirements.txt
 
-# install dev-requirements.txt
-RUN pip install -r /code/dev-requirements.txt
+# install test requirements
+RUN pip install -U tox
 
-# set working diretory
+# set working directory
 WORKDIR /code
