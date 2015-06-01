@@ -1,6 +1,8 @@
 machine:
   services:
     - docker
+  python:
+    version: 3.4.2
 
 dependencies:
   override:
@@ -9,4 +11,5 @@ dependencies:
 
 test:
   override:
+    - mkdir -p $CIRCLE_TEST_REPORTS/pytest
     - tox
